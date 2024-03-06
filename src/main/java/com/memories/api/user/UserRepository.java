@@ -1,2 +1,9 @@
-package com.memories.api.user;public class UserRepository {
+package com.memories.api.user;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    User findByUsername(String username);
+    User findByActivationToken(String token);
 }

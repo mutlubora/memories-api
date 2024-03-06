@@ -1,5 +1,8 @@
-package com.memories.api.auth;
+package com.memories.api.auth.dto;
 
-public record Credentials(String username, String password) {
+import jakarta.validation.constraints.NotBlank;
+
+public record Credentials(@NotBlank(message = "Username can not be empty.") String username,
+                          @NotBlank(message = "Password can not be empty.") String password) {
 
 }

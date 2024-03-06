@@ -1,15 +1,17 @@
 package com.memories.api.error;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 
-public class ApiError {
+public class ErrorDTO {
     private int status;
     private String message;
     private String path;
-    private long timestamp = new Date().getTime();
-    private Map<String, String> validationErrors = new HashMap<>();
+    private Date timestamp = new Date();
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Map<String, String> validationErrors = null;
 
     public int getStatus() {
         return status;
@@ -35,11 +37,11 @@ public class ApiError {
         this.path = path;
     }
 
-    public long getTimestamp() {
+    public Date getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(long timestamp) {
+    public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
     }
 

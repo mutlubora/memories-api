@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-public record UserCreate(
+public record UserCreateRequest(
         @NotBlank(message = "Username can not be empty.")
         @Size(min = 4, max = 255, message = "Username must be between 4-255 characters.")
         String username,

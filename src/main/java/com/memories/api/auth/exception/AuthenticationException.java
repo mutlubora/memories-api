@@ -1,4 +1,4 @@
-package com.memories.api.auth;
+package com.memories.api.auth.exception;
 
 public class AuthenticationException extends RuntimeException {
     public AuthenticationException() {

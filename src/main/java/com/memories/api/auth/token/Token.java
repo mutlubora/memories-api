@@ -1,2 +1,4 @@
-package com.memories.api.auth.token;public class Token {
+package com.memories.api.auth.token;
+
+public record Token(String prefix, String token) {
 }
